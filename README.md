@@ -138,16 +138,15 @@ Errors are surfaced immediately through the UI — not buried in logs. The Activ
 
 ## Architecture
 
-```mermaid
 flowchart LR
-    subgraph Frontend ["Frontend — React + TypeScript + Vite"]
+    subgraph Frontend ["Frontend - React + TypeScript + Vite"]
         UI[Dashboard UI]
         DE[Data Explorer]
         TP[TopNav Trigger]
         DS[Data Service Layer]
     end
 
-    subgraph Backend ["Backend — Node.js Zero Dependencies"]
+    subgraph Backend ["Backend - Node.js Zero Dependencies"]
         API[REST API]
         NORM[Normalizer]
         CACHE[Cache / Snapshot]
@@ -158,7 +157,7 @@ flowchart LR
     end
 
     subgraph Data ["Data Layer"]
-        R[books.toscrape.com]
+        R[://toscrape.com]
     end
 
     TP -->|POST /api/scraper/run| API
@@ -170,9 +169,8 @@ flowchart LR
     R --> BD
     API --> NORM
     NORM --> CACHE
-    CACHE -->|ScrapedRecord[] | UI
+    CACHE -->|ScrapedRecord[]| UI
     UI --> DE
-```
 
 ### Project Structure
 
