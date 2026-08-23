@@ -170,7 +170,7 @@ flowchart LR
     R --> BD
     API --> NORM
     NORM --> CACHE
-    CACHE -->|ScrapedRecord[]| UI
+    CACHE -->|ScrapedRecord[] | UI
     UI --> DE
 ```
 
